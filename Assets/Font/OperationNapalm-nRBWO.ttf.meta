@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 7b2eb849471ff3746b1be759a19807bd
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Operation Napalm
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 8a32cd67f7b282642a39fd38c217bee3, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

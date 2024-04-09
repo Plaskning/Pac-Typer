@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 7638534494018597108}
   - component: {fileID: 7638534494018597109}
   - component: {fileID: 7638534494018597110}
+  - component: {fileID: 1487941370}
+  - component: {fileID: 1487941371}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -107,10 +109,160 @@ Rigidbody:
   m_GameObject: {fileID: 7638534494018597111}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 0.3
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1487941370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7638534494018597111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3430615c2d69d547b2ef65c27f57d30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementForce: 4
+  maxSpeed: 100
+--- !u!114 &1487941371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7638534494018597111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: a9d192ee6a6ad8b4596d18dedeb34dd3, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9617bb21-4afa-4eed-aa4e-d76c2a80ae44
+    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow,/Saitek
+      Saitek X52 Pro Flight Control System/stick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e54f7568-136d-4939-a73f-6d61cb7238cc
+    m_ActionName: Player/Look[/Mouse/delta,/Pen/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2ec922c9-3122-444e-bce0-c3bbe608a430
+    m_ActionName: Player/Fire[/Mouse/leftButton,/Saitek Saitek X52 Pro Flight Control
+      System/trigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 974b8949-950b-40d4-ac6b-3f074a089fcf
+    m_ActionName: UI/Navigate[/Saitek Saitek X52 Pro Flight Control System/stick/up,/Saitek
+      Saitek X52 Pro Flight Control System/stick/down,/Saitek Saitek X52 Pro Flight
+      Control System/stick/left,/Saitek Saitek X52 Pro Flight Control System/stick/right,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ec2b9d53-0339-4814-9ea7-1dfc73518b11
+    m_ActionName: UI/Submit[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7bd12992-14d7-44d8-a670-56fc15b67e69
+    m_ActionName: UI/Cancel[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 85cbc04b-fa74-495a-b463-7105a3d2c173
+    m_ActionName: UI/Point[/Mouse/position,/Pen/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3dfe238d-1621-4c7f-ac59-79d3fc54cdd5
+    m_ActionName: UI/Click[/Mouse/leftButton,/Pen/tip]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2d2baa56-e796-4b92-81df-58d42680e437
+    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 80a6147d-f28f-4690-a5a4-d9dcaa758916
+    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: acc4b489-4082-469b-9a68-ed2c7a94bce6
+    m_ActionName: UI/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f84506a8-ad0f-4206-b648-16d421c03c7d
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e2c54a62-5de3-416f-b3f1-3675332a5101
+    m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1487941370}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 00bfa09a-200c-4107-911f-903d009d144f
+    m_ActionName: In-game/Move[/Saitek Saitek X52 Pro Flight Control System/stick/up,/Saitek
+      Saitek X52 Pro Flight Control System/stick/down,/Saitek Saitek X52 Pro Flight
+      Control System/stick/left,/Saitek Saitek X52 Pro Flight Control System/stick/right]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1487941370}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnCharSelect
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9129a556-8457-46fa-8e80-1cb5bb93a71c
+    m_ActionName: In-game/CharSelect[/Saitek Saitek X52 Pro Flight Control System/rz]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1487941370}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnCharEnter
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8af055b7-6a8a-459e-b4e2-9927f398bf4f
+    m_ActionName: In-game/CharEnter[/Saitek Saitek X52 Pro Flight Control System/trigger]
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: Joystick
+  m_DefaultActionMap: In-game
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
