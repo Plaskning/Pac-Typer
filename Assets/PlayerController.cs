@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody rigidbody;
 
-    [SerializeField] private ParticleSystem explosionParticle;
+    [SerializeField] private GameObject explosionParticle;
 
     [SerializeField] private float movementForce;
 
@@ -34,7 +34,11 @@ public class PlayerController : MonoBehaviour
 
         rigidbody.AddForce(adjustedVector);
 
+        // if no input stop force 
+
         Debug.Log(movementVector);
+
+        Debug.Log("addingForce");
     }
 
     public void OnCharSelect(InputAction.CallbackContext context)
@@ -49,6 +53,6 @@ public class PlayerController : MonoBehaviour
 
     public void OnNukeButton(InputAction.CallbackContext context)
     {
-        explosionParticle.Play();
+        Instantiate(explosionParticle,transform.position,Quaternion.identity);
     }
 }

@@ -6087,7 +6087,7 @@ PrefabInstance:
     - target: {fileID: 1487941370, guid: 62bda0b53bfe73a439b96730e17322ab, type: 3}
       propertyPath: explosionParticle
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
     - target: {fileID: 1487941371, guid: 62bda0b53bfe73a439b96730e17322ab, type: 3}
       propertyPath: m_ActionEvents.Array.size
       value: 17
