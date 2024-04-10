@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class EnemyMovement : MonoBehaviour
     private GameObject target;
     [SerializeField] float distanceToAttack;
     public float distance;
+    [SerializeField] private GameObject deathParticle;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,14 +29,27 @@ public class EnemyMovement : MonoBehaviour
         Debug.DrawLine(transform.position, target.transform.position, Color.green);
         if (distance < distanceToAttack)
         {
-            Debug.Log("------------------------GAME OVER------------------------");
+            GameOver();
         }
+    }
+
+    private void GameOver()
+    {
+        Debug.Log("------------------------GAME OVER------------------------");
+        Destroy(target);
+        Instantiate(deathParticle, target.transform.position, Quaternion.identity);
+        Invoke("MainScreenLoad", 2.0f);
     }
 
     public float CalculateDistance()
     {
         distance = Vector3.Distance(transform.position, target.transform.position);
         return distance;
+    }
+
+    public void MainScreenLoad()
+    {
+        SceneManager.LoadScene("MainScreen");
     }
 
     //private void OnCollisionEnter(Collision collision)
