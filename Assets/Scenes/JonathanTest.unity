@@ -4942,6 +4942,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 576069791, guid: 9c2785c5e5fb16240b3817b858f5922c, type: 3}
+      propertyPath: attackableRange
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8476942476152743333, guid: 9c2785c5e5fb16240b3817b858f5922c, type: 3}
       propertyPath: m_Name
       value: Pac-man (2)
@@ -4992,6 +4996,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c2785c5e5fb16240b3817b858f5922c, type: 3}
+--- !u!114 &90471433 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1578275079, guid: 9c2785c5e5fb16240b3817b858f5922c, type: 3}
+  m_PrefabInstance: {fileID: 1936271375}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &271327921
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5064,6 +5079,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 576069791, guid: 9c2785c5e5fb16240b3817b858f5922c, type: 3}
+      propertyPath: wordBank
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 576069791, guid: 9c2785c5e5fb16240b3817b858f5922c, type: 3}
+      propertyPath: attackableRange
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8476942476152743333, guid: 9c2785c5e5fb16240b3817b858f5922c, type: 3}
       propertyPath: m_Name
       value: Pac-man
@@ -5315,6 +5338,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WordBank
       objectReference: {fileID: 0}
+    - target: {fileID: 7788370821767228084, guid: 000d8ff75bed54e4588ff724753de662, type: 3}
+      propertyPath: m_TagString
+      value: WordBank
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 000d8ff75bed54e4588ff724753de662, type: 3}
 --- !u!114 &924833718 stripped
@@ -5359,6 +5386,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1154099664 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8476942476152743333, guid: 9c2785c5e5fb16240b3817b858f5922c, type: 3}
+  m_PrefabInstance: {fileID: 1936271375}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1154099671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154099664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab6355d5836efdd49aa7cc8bc28ade69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wordBank: {fileID: 0}
+  attackableRange: 3
+  wordOutput: {fileID: 90471433}
+  effect: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
 --- !u!1001 &1281502492
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5722,6 +5770,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player2Test
       objectReference: {fileID: 0}
+    - target: {fileID: 1574841835632121891, guid: 57016ca0a31d5cc4fb521684b86c293c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1574841835632121894, guid: 57016ca0a31d5cc4fb521684b86c293c, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -5929,7 +5981,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 576069791, guid: 9c2785c5e5fb16240b3817b858f5922c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9c2785c5e5fb16240b3817b858f5922c, type: 3}
 --- !u!1001 &5006305154716683278
 PrefabInstance:

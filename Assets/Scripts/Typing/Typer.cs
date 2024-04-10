@@ -8,7 +8,9 @@ public class Typer : MonoBehaviour
 {
 
     //create word bank
-    public WordBank wordBank = null;
+    public WordBank wordBank;
+    private EnemyMovement enemyMovement;
+    [SerializeField] private float attackableRange;
     public TextMeshProUGUI wordOutput = null;
     [SerializeField] private GameObject effect;
     private string remainingWord = string.Empty;
@@ -16,6 +18,12 @@ public class Typer : MonoBehaviour
 
     private void Start()
     {
+        enemyMovement = GetComponent<EnemyMovement>();
+        GameObject temp = GameObject.FindGameObjectWithTag("WordBank");
+        if(temp.TryGetComponent<WordBank>(out WordBank instancedWordBank))
+        {
+            wordBank = instancedWordBank;
+        }
         SetCurrentWord();
     }
 
@@ -45,6 +53,9 @@ public class Typer : MonoBehaviour
 
     private void CheckInput()
     {
+        if (enemyMovement.distance > attackableRange)
+            return;
+
         if (Input.anyKeyDown)
         {
             string keysPressed = Input.inputString;
