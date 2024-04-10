@@ -13,7 +13,7 @@ GameObject:
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -44,6 +44,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdf2e4925d7e269459196c735be424b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyToSpawn: {fileID: 8476942476152743333, guid: 9c2785c5e5fb16240b3817b858f5922c, type: 3}
+  enemyToSpawn: {fileID: 3042149365793434470, guid: 0ac9c926ae9012744939aabdcfeace23, type: 3}
   spawnDelayMin: 4
   spawnDelayMax: 8
+  spawnRateMultiplier:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.00625
+      outSlope: -0.00625
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 120
+      value: 0.25
+      inSlope: -0.00625
+      outSlope: -0.00625
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  timer: 0

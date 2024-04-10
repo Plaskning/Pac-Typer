@@ -7,13 +7,20 @@ public class WordBank : MonoBehaviour
 {
     private List<string> originalWords = new List<string>()
     {
-        "Pancakes", "Cow", "Nuke", "Now", "Chow"
+        "Pancakes", "Cow", "Nuke", "Now", "Chow", "Frog", "Tank", "how", "should", "Eye", "Write", "This", "many", "Words", "It", "is", "Kinda", "Boring"
     };
 
     private List<string> workingWords = new List<string>();
 
 
     private void Awake()
+    {
+        workingWords.AddRange(originalWords);
+        Shuffle(workingWords);
+        ConverToLower(workingWords);
+    }
+
+    public void ReshuffleWords()
     {
         workingWords.AddRange(originalWords);
         Shuffle(workingWords);

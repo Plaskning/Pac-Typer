@@ -29,6 +29,7 @@ public class Typer : MonoBehaviour
 
     private void Start()
     {
+        wordBank.ReshuffleWords();
         SetCurrentWord();
     }
 
@@ -44,10 +45,10 @@ public class Typer : MonoBehaviour
     {
         remainingWord = newString;
         wordOutput.text = remainingWord;
-        Debug.Log(remainingWord);
         if(remainingWord.Length == 0)
         {
-            Debug.Log("ran out of words");
+            wordBank.ReshuffleWords();
+            Debug.Log("Resuffled Words into wordbank");
         }
     }
 
