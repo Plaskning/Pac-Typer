@@ -11,19 +11,24 @@ public class Typer : MonoBehaviour
     public WordBank wordBank;
     private EnemyMovement enemyMovement;
     [SerializeField] private float attackableRange;
-    public TextMeshProUGUI wordOutput = null;
+    public TextMeshProUGUI wordOutput;
     [SerializeField] private GameObject effect;
     private string remainingWord = string.Empty;
     private string currentWord = "muffins";
 
-    private void Start()
+    private void Awake()
     {
         enemyMovement = GetComponent<EnemyMovement>();
+        wordOutput = GetComponentInChildren<TextMeshProUGUI>();
         GameObject temp = GameObject.FindGameObjectWithTag("WordBank");
-        if(temp.TryGetComponent<WordBank>(out WordBank instancedWordBank))
+        if (temp.TryGetComponent<WordBank>(out WordBank instancedWordBank))
         {
             wordBank = instancedWordBank;
         }
+    }
+
+    private void Start()
+    {
         SetCurrentWord();
     }
 
