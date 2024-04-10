@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - WordBank
+  - ScoreManager
+  - ScoreText
   layers:
   - Default
   - TransparentFX

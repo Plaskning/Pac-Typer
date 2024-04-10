@@ -11,16 +11,25 @@ public class ScoreManager : MonoBehaviour
 
     public int currentScore;
     public int lastScore;
-    public int highScore;
+    public static int highScore;
 
     private string sceneName;
 
+    private Scene currentScene;
+    private Scene nextScene;
+
     [SerializeField] private TextMeshProUGUI scoreText;
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(transform.gameObject);
+    }
     void Start()
     {
-        Scene currentScene = SceneManager.GetActiveScene();
+        GameObject temp = GameObject.FindGameObjectWithTag("ScoreText");
+        scoreText = temp.GetComponent<TextMeshProUGUI>();
 
-        sceneName = currentScene.name;
+        currentScene = SceneManager.GetActiveScene();
 
         currentScore = 0;
     }
@@ -30,6 +39,20 @@ public class ScoreManager : MonoBehaviour
     {
         checkHighScore();
         updateHighScore();
+        Debug.Log(currentScore);
+
+        currentScene = SceneManager.GetActiveScene();
+        if (currentScene != nextScene)
+        {
+            if (scoreText == null)
+            {
+                GameObject temp = GameObject.FindGameObjectWithTag("ScoreText");
+                scoreText = temp.GetComponent<TextMeshProUGUI>();
+            }
+        }
+        nextScene = SceneManager.GetActiveScene();
+
+        sceneName = currentScene.name;
     }
 
     public void checkHighScore()
@@ -46,9 +69,9 @@ public class ScoreManager : MonoBehaviour
         {
             scoreText.text = ("Last Score: " + lastScore + "<br>High Score: " + highScore);
         }
-        else if (sceneName == "MainLevel")
+        else if (sceneName == "MainScene")
         {
-            scoreText.text = ("Current Score: " + currentScore + "<br>High Score: " + highScore);
+            scoreText.text = ("Current Score: " + currentScore + "<br>High Score: " + highScore);               
         }
     }
 }

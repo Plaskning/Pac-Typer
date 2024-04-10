@@ -18,6 +18,9 @@ public class Typer : MonoBehaviour
     private string remainingWord = string.Empty;
     private string currentWord = "muffins";
 
+    private GameObject scoreManagerObject;
+    private ScoreManager scoreManager;
+
     private void Awake()
     {
         enemyMovement = GetComponent<EnemyMovement>();
@@ -34,6 +37,9 @@ public class Typer : MonoBehaviour
         timeToKillTimer = 10;
         wordBank.ReshuffleWords();
         SetCurrentWord();
+
+        scoreManagerObject = GameObject.FindGameObjectWithTag("ScoreManager");
+        scoreManager = scoreManagerObject.GetComponent<ScoreManager>();
     }
 
     private void SetCurrentWord()
@@ -91,6 +97,8 @@ public class Typer : MonoBehaviour
             {
                 //Give player points based on timeToKill
                 Debug.Log("Grant player 50 base points + " + 5 * ((int)timeToKillTimer) + " bonus points");
+
+                scoreManager.currentScore += (50 + (5 * ((int)timeToKillTimer)));
 
 
                 Instantiate(effect, wordOutput.transform.position, Quaternion.identity);

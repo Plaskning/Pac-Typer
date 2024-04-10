@@ -14,10 +14,15 @@ public class EnemyMovement : MonoBehaviour
     public float distance;
     [SerializeField] private GameObject deathParticle;
     // Start is called before the first frame update
+
+    private GameObject scoreManagerObject;
+    private ScoreManager scoreManager;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player");
+        scoreManagerObject = GameObject.FindGameObjectWithTag("ScoreManager");
+        scoreManager = scoreManagerObject.GetComponent<ScoreManager>();
     }
 
     // Update is called once per frame
@@ -38,6 +43,8 @@ public class EnemyMovement : MonoBehaviour
         Debug.Log("------------------------GAME OVER------------------------");
         Destroy(target);
         Instantiate(deathParticle, target.transform.position, Quaternion.identity);
+        scoreManager.lastScore = scoreManager.currentScore;
+        scoreManager.currentScore = 0;
         Invoke("MainScreenLoad", 2.0f);
     }
 
