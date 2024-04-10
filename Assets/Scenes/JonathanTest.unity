@@ -5211,7 +5211,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &796953233
 Transform:
@@ -5413,6 +5413,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wordBank: {fileID: 0}
   attackableRange: 3
+  startTimeToKillTimer: 0
+  timeToKillTimer: 0
   wordOutput: {fileID: 90471433}
   effect: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
 --- !u!1001 &1281502492
@@ -5594,7 +5596,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1592079131
 Transform:

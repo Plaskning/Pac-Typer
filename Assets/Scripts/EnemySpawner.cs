@@ -28,7 +28,6 @@ public class EnemySpawner : MonoBehaviour
         {
             float tempMultiplier = spawnRateMultiplier.Evaluate(timer);
             float delay = Random.Range(spawnDelayMin, spawnDelayMax) * tempMultiplier;
-            Debug.Log(delay);
             yield return new WaitForSeconds(delay);
             //spawn me
             Instantiate(enemyToSpawn, transform.position, Quaternion.identity);

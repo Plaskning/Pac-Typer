@@ -10,7 +10,9 @@ public class Typer : MonoBehaviour
     //create word bank
     public WordBank wordBank;
     private EnemyMovement enemyMovement;
-    [SerializeField] private float attackableRange;
+    [SerializeField] public float attackableRange;
+    [SerializeField] bool startTimeToKillTimer;
+    [SerializeField] private float timeToKillTimer;
     public TextMeshProUGUI wordOutput;
     [SerializeField] private GameObject effect;
     private string remainingWord = string.Empty;
@@ -29,6 +31,7 @@ public class Typer : MonoBehaviour
 
     private void Start()
     {
+        timeToKillTimer = 10;
         wordBank.ReshuffleWords();
         SetCurrentWord();
     }
@@ -55,6 +58,10 @@ public class Typer : MonoBehaviour
     private void Update()
     {
         CheckInput();
+        if(startTimeToKillTimer && timeToKillTimer > 0)
+        {
+            timeToKillTimer -= Time.deltaTime;  
+        }
     }
 
     private void CheckInput()
@@ -77,10 +84,15 @@ public class Typer : MonoBehaviour
     {
         if (IsCorrectLetter(typedLetter))
         {
+            startTimeToKillTimer = true;
             RemoveLetter();
 
             if (IsWordComplete())
             {
+                //Give player points based on timeToKill
+                Debug.Log("Grant player 50 base points + " + 5 * ((int)timeToKillTimer) + " bonus points");
+
+
                 Instantiate(effect, wordOutput.transform.position, Quaternion.identity);
                 Destroy(gameObject);
                 //SetCurrentWord();
@@ -96,6 +108,7 @@ public class Typer : MonoBehaviour
 
     private void RemoveLetter()
     {
+
         string newString = remainingWord.Remove(0, 1);
         SetRemainingWord(newString);
     }
