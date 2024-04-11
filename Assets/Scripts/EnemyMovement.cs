@@ -12,17 +12,16 @@ public class EnemyMovement : MonoBehaviour
     private GameObject target;
     [SerializeField] float distanceToAttack;
     public float distance;
-    [SerializeField] private GameObject deathParticle;
     // Start is called before the first frame update
 
-    private GameObject scoreManagerObject;
-    private ScoreManager scoreManager;
+    private GameManager gameManager;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player");
-        scoreManagerObject = GameObject.FindGameObjectWithTag("ScoreManager");
-        scoreManager = scoreManagerObject.GetComponent<ScoreManager>();
+
+        GameObject gameManagerObject = GameObject.FindGameObjectWithTag("GameManager");
+        gameManager = gameManagerObject.GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -33,18 +32,8 @@ public class EnemyMovement : MonoBehaviour
         //distance = Vector3.Distance(transform.position, target.transform.position);
         if (distance < distanceToAttack)
         {
-            GameOver();
+            gameManager.GameOver();
         }
-    }
-
-    private void GameOver()
-    {
-        Debug.Log("------------------------GAME OVER------------------------");
-        Destroy(target);
-        Instantiate(deathParticle, target.transform.position, Quaternion.identity);
-        scoreManager.lastScore = scoreManager.currentScore;
-        scoreManager.currentScore = 0;
-        Invoke("MainScreenLoad", 2.0f);
     }
 
     public float CalculateDistance()
