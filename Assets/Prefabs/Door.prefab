@@ -114,11 +114,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NumberBank: {fileID: 0}
-  attackableRange: 0
+  attackableRange: 6
   startTimeToKillTimer: 0
-  timeToKillTimer: 0
   wordOutput: {fileID: 0}
   effect: {fileID: 0}
+  OpenPosition: {x: 0, y: 5, z: 0}
+  ClosedPosition: {x: 0, y: -5, z: 0}
 --- !u!114 &3636955946668944270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,7 +146,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceToAttack: 0
   distance: 0
-  deathParticle: {fileID: 0}
 --- !u!1 &3636955946843776068
 GameObject:
   m_ObjectHideFlags: 0

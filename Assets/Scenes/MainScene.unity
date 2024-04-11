@@ -619,7 +619,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3636955946668944264, guid: f3b3b477f9cf0e146b36d7b5b9cf6d10, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3636955946668944264, guid: f3b3b477f9cf0e146b36d7b5b9cf6d10, type: 3}
       propertyPath: m_LocalScale.y
@@ -682,16 +682,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 300943410}
     - target: {fileID: 3636955946668944271, guid: f3b3b477f9cf0e146b36d7b5b9cf6d10, type: 3}
-      propertyPath: OpenPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3636955946668944271, guid: f3b3b477f9cf0e146b36d7b5b9cf6d10, type: 3}
       propertyPath: OpenPosition.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3636955946668944271, guid: f3b3b477f9cf0e146b36d7b5b9cf6d10, type: 3}
-      propertyPath: OpenPosition.z
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3636955946668944271, guid: f3b3b477f9cf0e146b36d7b5b9cf6d10, type: 3}
       propertyPath: attackableRange
@@ -703,7 +695,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3636955946668944271, guid: f3b3b477f9cf0e146b36d7b5b9cf6d10, type: 3}
       propertyPath: ClosedPosition.y
-      value: -4
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3636955948341820798, guid: f3b3b477f9cf0e146b36d7b5b9cf6d10, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3636955948341820798, guid: f3b3b477f9cf0e146b36d7b5b9cf6d10, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3636955948341820798, guid: f3b3b477f9cf0e146b36d7b5b9cf6d10, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3636955948341820798, guid: f3b3b477f9cf0e146b36d7b5b9cf6d10, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3636955948341820798, guid: f3b3b477f9cf0e146b36d7b5b9cf6d10, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3b3b477f9cf0e146b36d7b5b9cf6d10, type: 3}
@@ -1815,28 +1827,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 836660183}
     - target: {fileID: 3636955946668944271, guid: f3b3b477f9cf0e146b36d7b5b9cf6d10, type: 3}
-      propertyPath: OpenPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3636955946668944271, guid: f3b3b477f9cf0e146b36d7b5b9cf6d10, type: 3}
-      propertyPath: OpenPosition.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3636955946668944271, guid: f3b3b477f9cf0e146b36d7b5b9cf6d10, type: 3}
-      propertyPath: OpenPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3636955946668944271, guid: f3b3b477f9cf0e146b36d7b5b9cf6d10, type: 3}
-      propertyPath: attackableRange
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3636955946668944271, guid: f3b3b477f9cf0e146b36d7b5b9cf6d10, type: 3}
       propertyPath: timeToKillTimer
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 3636955946668944271, guid: f3b3b477f9cf0e146b36d7b5b9cf6d10, type: 3}
-      propertyPath: ClosedPosition.y
-      value: -4
+    - target: {fileID: 3636955948341820798, guid: f3b3b477f9cf0e146b36d7b5b9cf6d10, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3636955948341820798, guid: f3b3b477f9cf0e146b36d7b5b9cf6d10, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3636955948341820798, guid: f3b3b477f9cf0e146b36d7b5b9cf6d10, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3636955948341820798, guid: f3b3b477f9cf0e146b36d7b5b9cf6d10, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3636955948341820798, guid: f3b3b477f9cf0e146b36d7b5b9cf6d10, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3b3b477f9cf0e146b36d7b5b9cf6d10, type: 3}
@@ -4996,28 +5008,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2021557592}
     - target: {fileID: 3636955946668944271, guid: f3b3b477f9cf0e146b36d7b5b9cf6d10, type: 3}
-      propertyPath: OpenPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3636955946668944271, guid: f3b3b477f9cf0e146b36d7b5b9cf6d10, type: 3}
-      propertyPath: OpenPosition.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3636955946668944271, guid: f3b3b477f9cf0e146b36d7b5b9cf6d10, type: 3}
-      propertyPath: OpenPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3636955946668944271, guid: f3b3b477f9cf0e146b36d7b5b9cf6d10, type: 3}
       propertyPath: attackableRange
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3636955946668944271, guid: f3b3b477f9cf0e146b36d7b5b9cf6d10, type: 3}
       propertyPath: timeToKillTimer
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3636955946668944271, guid: f3b3b477f9cf0e146b36d7b5b9cf6d10, type: 3}
-      propertyPath: ClosedPosition.y
-      value: -4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3b3b477f9cf0e146b36d7b5b9cf6d10, type: 3}
