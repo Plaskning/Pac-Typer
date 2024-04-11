@@ -7,7 +7,7 @@ public class WordBank : MonoBehaviour
 {
     private List<string> originalWords = new List<string>()
     {
-        "Pancakes", "Cow", "Nuke", "Now", "Chow", "Frog", "Tank", "how", "should", "Eye", "Write", "This", "many", "Words", "It", "is", "Kinda", "Boring"
+        "Pancakes", "Cow", "Nuke", "Now", "Chow", "Frog", "Tank", "how", "should", "Eye", "Write", "This", "many", "Words", "It", "is", "Kinda", "Boring", "Swing", "Dance", "Pac-man", "Snail", "Draw", "rocket", "painter", "allow"
     };
 
     private List<string> workingWords = new List<string>();
