@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    private PacInput inputActions;
+
     private Rigidbody rigidbody;
 
     [SerializeField] private GameObject explosionParticle;
@@ -12,16 +14,26 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float movementForce;
 
     [SerializeField] private float maxSpeed;
+    private bool isControlling;
+
+    private bool isMoving;
+    private float velocity;
+
+    private Vector3 adjustedVector;
+
     // Start is called before the first frame update
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
+
+        inputActions = new PacInput();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("haha");
+        CalculateVelocity();
+        HandleMovement();
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -30,15 +42,32 @@ public class PlayerController : MonoBehaviour
 
         Vector2 forceVector = movementVector * movementForce;
 
-        Vector3 adjustedVector = new Vector3(forceVector.x, 0, forceVector.y);
+        adjustedVector = new Vector3(forceVector.x, 0, forceVector.y);
 
-        rigidbody.AddForce(adjustedVector);
+        if (context.started || context.performed)
+        {
+            isControlling = true;
+        }
+        else
+        {
+            isControlling = false;
+        }
 
         // if no input stop force 
 
-        Debug.Log(movementVector);
+       //Debug.Log(movementVector);
+    }
 
-        Debug.Log("addingForce");
+    private void HandleMovement()
+    {
+        if (isControlling)
+        {
+            if (rigidbody.velocity.magnitude <= maxSpeed)
+            {
+                rigidbody.AddForce(adjustedVector);
+                Debug.Log("addingForce");
+            }
+        }
     }
 
     public void OnCharSelect(InputAction.CallbackContext context)
@@ -54,5 +83,18 @@ public class PlayerController : MonoBehaviour
     public void OnNukeButton(InputAction.CallbackContext context)
     {
         Instantiate(explosionParticle,transform.position,Quaternion.identity);
+    }
+
+    private void CalculateVelocity()
+    {
+        velocity = rigidbody.velocity.magnitude;
+        if(velocity == 0)
+        {
+            isMoving = false;
+        }
+        else
+        {
+            isMoving = true;
+        }
     }
 }
