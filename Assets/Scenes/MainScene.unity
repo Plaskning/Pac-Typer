@@ -109,7 +109,7 @@ NavMeshSettings:
     agentRadius: 0.5
     agentHeight: 2
     agentSlope: 45
-    agentClimb: 0.4
+    agentClimb: 0.5
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
@@ -605,7 +605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5448e3d8d90715640a95b253519204a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathParticle: {fileID: 1025285306637258, guid: d8f0099df63275647a8bcf646df1ca00, type: 3}
+  deathParticle: {fileID: 1722250247140862, guid: ef134ce1a2a98d94fb68c860d9c736c6, type: 3}
   restartTime: 2
 --- !u!4 &382728717
 Transform:
@@ -2029,7 +2029,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6475095781068951465, guid: e1e8e3ab2e981b74ea519b97d1affbd6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -31.538614
+      value: -30.314
       objectReference: {fileID: 0}
     - target: {fileID: 6475095781068951465, guid: e1e8e3ab2e981b74ea519b97d1affbd6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2126,7 +2126,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6475095781068951465, guid: e1e8e3ab2e981b74ea519b97d1affbd6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -31.538614
+      value: -30.314
       objectReference: {fileID: 0}
     - target: {fileID: 6475095781068951465, guid: e1e8e3ab2e981b74ea519b97d1affbd6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2616,7 +2616,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6475095781068951465, guid: e1e8e3ab2e981b74ea519b97d1affbd6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -31.538614
+      value: -30.314
       objectReference: {fileID: 0}
     - target: {fileID: 6475095781068951465, guid: e1e8e3ab2e981b74ea519b97d1affbd6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3709,7 +3709,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6475095781068951465, guid: e1e8e3ab2e981b74ea519b97d1affbd6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -31.538614
+      value: -30.314
       objectReference: {fileID: 0}
     - target: {fileID: 6475095781068951465, guid: e1e8e3ab2e981b74ea519b97d1affbd6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4379,6 +4379,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1487941370, guid: 62bda0b53bfe73a439b96730e17322ab, type: 3}
+      propertyPath: maxSpeed
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1487941370, guid: 62bda0b53bfe73a439b96730e17322ab, type: 3}
+      propertyPath: movementForce
+      value: 650
+      objectReference: {fileID: 0}
     - target: {fileID: 1487941370, guid: 62bda0b53bfe73a439b96730e17322ab, type: 3}
       propertyPath: explosionParticle
       value: 

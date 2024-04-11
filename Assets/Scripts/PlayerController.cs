@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 movementVector = context.ReadValue<Vector2>();
 
-        Vector2 forceVector = movementVector * movementForce;
+        Vector2 forceVector = movementVector * movementForce * Time.deltaTime;
 
         adjustedVector = new Vector3(forceVector.x, 0, forceVector.y);
 
