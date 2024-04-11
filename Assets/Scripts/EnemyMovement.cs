@@ -31,7 +31,6 @@ public class EnemyMovement : MonoBehaviour
         agent.SetDestination(target.transform.position);
         CalculateDistance();
         //distance = Vector3.Distance(transform.position, target.transform.position);
-        Debug.DrawLine(transform.position, target.transform.position, Color.green);
         if (distance < distanceToAttack)
         {
             GameOver();

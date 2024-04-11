@@ -1,62 +1,52 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
-public class Typer : MonoBehaviour
+public class NumberTyper : MonoBehaviour
 {
-
     //create word bank
-    public WordBank wordBank;
+    public NumberBank NumberBank;
     private EnemyMovement enemyMovement;
     [SerializeField] public float attackableRange;
     [SerializeField] bool startTimeToKillTimer;
-    [SerializeField] private float timeToKillTimer;
     public TextMeshProUGUI wordOutput;
     [SerializeField] private GameObject effect;
     private string remainingWord = string.Empty;
     private string currentWord = "muffins";
-
-    private GameObject scoreManagerObject;
-    private ScoreManager scoreManager;
 
     private void Awake()
     {
         enemyMovement = GetComponent<EnemyMovement>();
         wordOutput = GetComponentInChildren<TextMeshProUGUI>();
         GameObject temp = GameObject.FindGameObjectWithTag("WordBank");
-        if (temp.TryGetComponent<WordBank>(out WordBank instancedWordBank))
+        if (temp.TryGetComponent<NumberBank>(out NumberBank instancedNumberBank))
         {
-            wordBank = instancedWordBank;
+            NumberBank = instancedNumberBank;
         }
     }
 
     private void Start()
     {
-        timeToKillTimer = 10;
-        wordBank.ReshuffleWords();
+        NumberBank.ReshuffleWords();
         SetCurrentWord();
-
-        scoreManagerObject = GameObject.FindGameObjectWithTag("ScoreManager");
-        scoreManager = scoreManagerObject.GetComponent<ScoreManager>();
     }
 
     private void SetCurrentWord()
     {
         // get bank word
-        currentWord = wordBank.GetWord();
+        currentWord = NumberBank.GetWord();
         SetRemainingWord(currentWord);
-        
+
     }
 
     private void SetRemainingWord(string newString)
     {
         remainingWord = newString;
         wordOutput.text = remainingWord;
-        if(remainingWord.Length == 0)
+        if (remainingWord.Length == 0)
         {
-            wordBank.ReshuffleWords();
+            NumberBank.ReshuffleWords();
             Debug.Log("Resuffled Words into wordbank");
         }
     }
@@ -64,10 +54,6 @@ public class Typer : MonoBehaviour
     private void Update()
     {
         CheckInput();
-        if(startTimeToKillTimer && timeToKillTimer > 0)
-        {
-            timeToKillTimer -= Time.deltaTime;  
-        }
     }
 
     private void CheckInput()
@@ -86,7 +72,7 @@ public class Typer : MonoBehaviour
         {
             string keysPressed = Input.inputString;
 
-            if(keysPressed.Length == 1)
+            if (keysPressed.Length == 1)
             {
                 EnterLetter(keysPressed);
             }
@@ -102,14 +88,8 @@ public class Typer : MonoBehaviour
 
             if (IsWordComplete())
             {
-                //Give player points based on timeToKill
-                Debug.Log("Grant player 50 base points + " + 5 * ((int)timeToKillTimer) + " bonus points");
+                //move to open state
 
-                scoreManager.currentScore += (50 + (5 * ((int)timeToKillTimer)));
-
-
-                Instantiate(effect, wordOutput.transform.position, Quaternion.identity);
-                Destroy(gameObject);
                 //SetCurrentWord();
             }
 
