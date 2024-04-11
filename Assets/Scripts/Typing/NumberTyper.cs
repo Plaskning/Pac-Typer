@@ -14,6 +14,9 @@ public class NumberTyper : MonoBehaviour
     [SerializeField] private GameObject effect;
     private string remainingWord = string.Empty;
     private string currentWord = "muffins";
+    [SerializeField] Vector3 OpenPosition = new Vector3(0, -1.5f, 0);
+    [SerializeField] Vector3 ClosedPosition = new Vector3(0, 0, 0);
+    private bool isOpen = false;
 
     private void Awake()
     {
@@ -89,7 +92,7 @@ public class NumberTyper : MonoBehaviour
             if (IsWordComplete())
             {
                 //move to open state
-
+                MoveDoor();
                 //SetCurrentWord();
             }
 
@@ -111,5 +114,24 @@ public class NumberTyper : MonoBehaviour
     private bool IsWordComplete()
     {
         return remainingWord.Length == 0;
+    }
+
+    private void MoveDoor()
+    {
+        if (isOpen)
+            return;
+        isOpen = true;
+        transform.position = Vector3.MoveTowards(transform.position, transform.position + ClosedPosition, 1f);
+        StartCoroutine(CloseDoorAfterTime());
+    }
+
+    private IEnumerator CloseDoorAfterTime()
+    {
+        yield return new WaitForSeconds(4f);
+        transform.position = Vector3.MoveTowards(transform.position, transform.position + OpenPosition, 1f);
+        yield return new WaitForSeconds(1f);
+        NumberBank.ReshuffleWords();
+        SetCurrentWord();
+        isOpen = false;
     }
 }
