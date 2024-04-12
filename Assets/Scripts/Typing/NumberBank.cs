@@ -8,7 +8,7 @@ public class NumberBank : MonoBehaviour
 {
     private List<string> originalWords = new List<string>()
     {
-        "1234", "5267", "3345", "6139"
+        "1234", "5267", "3345", "6139", "9327", "6743", "2251", "8566"
     };
 
     private List<string> workingWords = new List<string>();
