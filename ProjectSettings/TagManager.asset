@@ -8,6 +8,7 @@ TagManager:
   - ScoreManager
   - ScoreText
   - GameManager
+  - HardWordBank
   layers:
   - Default
   - TransparentFX

@@ -1,55 +1,62 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
-public class NumberTyper : MonoBehaviour
+public class HardTyper : MonoBehaviour
 {
+
     //create word bank
-    public NumberBank NumberBank;
+    public HardWordBank wordBank;
     private EnemyMovement enemyMovement;
     [SerializeField] public float attackableRange;
     [SerializeField] bool startTimeToKillTimer;
+    [SerializeField] private float timeToKillTimer;
     public TextMeshProUGUI wordOutput;
     [SerializeField] private GameObject effect;
     private string remainingWord = string.Empty;
     private string currentWord = "muffins";
-    [SerializeField] Vector3 OpenPosition;
-    [SerializeField] Vector3 ClosedPosition;
-    private bool isOpen = false;
+
+    private GameObject scoreManagerObject;
+    private ScoreManager scoreManager;
 
     private void Awake()
     {
         enemyMovement = GetComponent<EnemyMovement>();
         wordOutput = GetComponentInChildren<TextMeshProUGUI>();
-        GameObject temp = GameObject.FindGameObjectWithTag("WordBank");
-        if (temp.TryGetComponent<NumberBank>(out NumberBank instancedNumberBank))
+        GameObject temp = GameObject.FindGameObjectWithTag("HardWordBank");
+        if (temp.TryGetComponent<HardWordBank>(out HardWordBank instancedWordBank))
         {
-            NumberBank = instancedNumberBank;
+            wordBank = instancedWordBank;
         }
     }
 
     private void Start()
     {
-        NumberBank.ReshuffleWords();
+        timeToKillTimer = 10;
+        wordBank.ReshuffleWords();
         SetCurrentWord();
+
+        scoreManagerObject = GameObject.FindGameObjectWithTag("ScoreManager");
+        scoreManager = scoreManagerObject.GetComponent<ScoreManager>();
     }
 
     private void SetCurrentWord()
     {
         // get bank word
-        currentWord = NumberBank.GetWord();
+        currentWord = wordBank.GetWord();
         SetRemainingWord(currentWord);
-
+        
     }
 
     private void SetRemainingWord(string newString)
     {
         remainingWord = newString;
         wordOutput.text = remainingWord;
-        if (remainingWord.Length == 0)
+        if(remainingWord.Length == 0)
         {
-            NumberBank.ReshuffleWords();
+            wordBank.ReshuffleWords();
             Debug.Log("Resuffled Words into wordbank");
         }
     }
@@ -57,6 +64,10 @@ public class NumberTyper : MonoBehaviour
     private void Update()
     {
         CheckInput();
+        if(startTimeToKillTimer && timeToKillTimer > 0)
+        {
+            timeToKillTimer -= Time.deltaTime;  
+        }
     }
 
     private void CheckInput()
@@ -75,7 +86,7 @@ public class NumberTyper : MonoBehaviour
         {
             string keysPressed = Input.inputString;
 
-            if (keysPressed.Length == 1)
+            if(keysPressed.Length == 1)
             {
                 EnterLetter(keysPressed);
             }
@@ -91,8 +102,14 @@ public class NumberTyper : MonoBehaviour
 
             if (IsWordComplete())
             {
-                //move to open state
-                MoveDoor();
+                //Give player points based on timeToKill
+                Debug.Log("Grant player 50 base points + " + 5 * ((int)timeToKillTimer) + " bonus points");
+
+                scoreManager.currentScore += (50 + (5 * ((int)timeToKillTimer)));
+
+
+                Instantiate(effect, wordOutput.transform.position, Quaternion.identity);
+                Destroy(gameObject);
                 //SetCurrentWord();
             }
 
@@ -114,24 +131,5 @@ public class NumberTyper : MonoBehaviour
     private bool IsWordComplete()
     {
         return remainingWord.Length == 0;
-    }
-
-    private void MoveDoor()
-    {
-        if (isOpen)
-            return;
-        isOpen = true;
-        transform.position = Vector3.MoveTowards(transform.position, transform.position + ClosedPosition, 2f);
-        StartCoroutine(CloseDoorAfterTime());
-    }
-
-    private IEnumerator CloseDoorAfterTime()
-    {
-        yield return new WaitForSeconds(9f);
-        transform.position = Vector3.MoveTowards(transform.position, transform.position + OpenPosition, 2f);
-        yield return new WaitForSeconds(1f);
-        NumberBank.ReshuffleWords();
-        SetCurrentWord();
-        isOpen = false;
     }
 }
